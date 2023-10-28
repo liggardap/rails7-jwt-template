@@ -1,0 +1,14 @@
+en:
+  activerecord:
+    errors: 
+      models:
+        user:
+          attributes:
+            name:
+  exceptions:
+    unauthorized: Your request not autorized
+    record_invalid: Record Invalid
+    record_not_found: Record not Found
+    role_error: You are not egible for this feature
+    detail:
+      record_not_found: Couldn't find the record with current identifier
