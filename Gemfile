@@ -3,8 +3,9 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.1.1'
+ruby '3.2.2'
 gem 'active_model_serializers', '~> 0.10.0'
+gem 'activerecord-postgis-adapter'
 gem 'bootsnap', require: false
 gem 'devise'
 gem 'devise-jwt'
@@ -14,7 +15,7 @@ gem 'jbuilder'
 gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
 gem 'rack-cors'
-gem 'rails', '~> 7.0.7'
+gem 'rails', '~> 7.1.3'
 gem 'redis', '~> 4.0'
 gem 'sprockets-rails'
 gem 'stimulus-rails'
