@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:latest  # Use the latest PostgreSQL image
+    environment:
+      POSTGRES_DB: backend
+      POSTGRES_USER: liggar
+      POSTGRES_PASSWORD: Password1!
+    ports:
+      - "6543:5432"  # Map PostgreSQL port
+    volumes:
+      - pgdata:/var/lib/postgresql/data  # Persist PostgreSQL data
+
+  myapp:
+    build:
+      context: .
+      dockerfile: Dockerfile  # Adjust the Dockerfile name if necessary
+    ports:
+      - "8000:8000"  # Adjust port mapping as needed
+    volumes:
+      - .:/app  # Mount the current directory to /app in the container
+    depends_on:
+      - db
+    # environment:  # Define environment variables for your app
+    #   DATABASE_URL: "postgis://liggar:mypassword@db/backend"  
+    env_file:
+      - ./config/application.yml
+
+volumes:
+  pgdata:
